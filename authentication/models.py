@@ -12,10 +12,10 @@ class MyUserManager(UserManager):
         Create and save a user with the given username, email, and password.
         """
         if not username:
-            raise ValueError("The given email must be set")
+            raise ValueError("The given username must be set")
         
         if not email:
-            raise ValueError("The given username must be set")
+            raise ValueError("The given email must be set")
         email = self.normalize_email(email)
         username = self.model.normalize_username(username)
         user = self.model(username=username, email=email, **extra_fields)

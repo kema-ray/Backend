@@ -8,7 +8,7 @@ class RegisterAPIView(GenericAPIView):
     serializer_class = RegisterSerializer
 
     def post(self, request):
-        serializer = self.serializer_class(date = request.data)
+        serializer = self.serializer_class(data = request.data)
 
         if serializer.is_valid():
             serializer.save()
